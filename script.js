@@ -7,8 +7,8 @@ let fish = document.getElementById("fish btn");
 let imgres = document.getElementById("img-result");
 let numcod = document.getElementById("num-cod");
 let numsalm = document.getElementById("num-salmon");
-let numtrop = document.getElementById("num-tropical");
-let numpuff = document.getElementById("num-puffer");
+let numtrop = document.getElementById("num-trop");
+let numpuff = document.getElementById("num-puff");
 
 // global variables
 let character = "Steve"
@@ -59,6 +59,23 @@ function fishOnce() {
          numpuff.innerHTML = numPuffer;
       }
    } else {
-      alert("Fish with Alex");
+      let randNum = Math.random();
+      if (randNum < 0.1) {
+         numCod++;
+         imgres.src = "img/Raw-Cod.png";
+         numcod.innerHTML = numCod;
+      } else if (randNum < 0.2) {
+         numSalmon++;
+         imgres.src = "img/Raw-Salmon.png"; 
+         numsalm.innerHTML = numSalmon;
+      } else if (randNum < 0.5 ) {
+         numTropical++;
+         imgres.src = "img/Tropical-Fish.png"; 
+         numtrop.innerHTML = numTropical;
+      } else {
+         numPuffer++;
+         imgres.src = "img/Pufferfish.png";
+         numpuff.innerHTML = numPuffer;
+      }
    }
 }
